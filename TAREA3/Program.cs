@@ -1,20 +1,21 @@
 ﻿try
 {
-    Console.WriteLine("Ingrese un numero : ");
-    int numero = Convert.ToInt32(Console.ReadLine());
-
-    if ( numero % 2 == 0)
+    Console.WriteLine("Ingrese el monto del prestamo que desea realizar");
+    double Prestamo = Convert.ToDouble(Console.ReadLine());
+    Console.WriteLine("Ingrese su edad porfavor");
+    int edad = Convert.ToInt32(Console.ReadLine());
+    if (Prestamo < 5000 || edad > 60)
     {
-        Console.WriteLine("Su numero es par");
+        Console.WriteLine("usted aplica al prestamo, Felicidades");
     }
     else
     {
-        Console.WriteLine("su numero es impar");
+        Console.WriteLine("Lamentablemente no cumple con los requisitos para el prestamo");
     }
 }
 catch (FormatException)
 {
-    Console.WriteLine("Ingresar solamente numeros porfavor");
+    Console.WriteLine("Ingresar solo lo solicitado porfavor");
 }
 catch (Exception ex)
 {
