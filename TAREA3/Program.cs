@@ -1,31 +1,20 @@
 ﻿try
 {
-    Console.WriteLine("porfavor Ingrese su primer número:");
-    double numero1 = Convert.ToDouble(Console.ReadLine());
+    Console.WriteLine("Ingrese su edad actual:");
+    int Edad = Convert.ToInt32(Console.ReadLine());
 
-    Console.WriteLine("Ahora ingrese el segundo número:");
-    double numero2 = Convert.ToDouble(Console.ReadLine());
-
-    Console.WriteLine("Por ultimo el tercer número:");
-    double numero3 = Convert.ToDouble(Console.ReadLine());
-
-    double numero = numero1;
-
-    if (numero2 > numero)
+    if (Edad > 18)
     {
-        numero = numero2;
+        Console.WriteLine("Feicidades, puedes pasar al club");
     }
-
-    if (numero3 > numero)
+    else
     {
-        numero = numero3;
+        Console.WriteLine("No tienes la edad suficiente para entrar");
     }
-
-    Console.WriteLine("El mayor de los 3 numeros ingresados es: " + numero);
 }
 catch (FormatException)
 {
-    Console.WriteLine("Haga el favor de solo colocar numeros");
+    Console.WriteLine("Coloca solo numeros porfavor");
 }
 catch (Exception ex)
 {
