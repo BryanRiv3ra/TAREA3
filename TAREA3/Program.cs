@@ -1,6 +1,4 @@
-﻿using System.Runtime.ConstrainedExecution;
-
-try
+﻿try
 {
     string NombreUsuario = "Usuario";
     string ContraseñaV = "contraseña";
