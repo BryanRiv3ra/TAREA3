@@ -1,21 +1,20 @@
 ﻿try
 {
-    string NombreUsuario = "Usuario";
-    string ContraseñaV = "contraseña";
+    Console.WriteLine("Ingrese un numero : ");
+    int numero = Convert.ToInt32(Console.ReadLine());
 
-    Console.WriteLine("Ingrese su nombre de usuario: ");
-    string NombreusuarioI = Console.ReadLine();
-    Console.WriteLine("Ingrese su contraseña: ");
-    string ContraseñaI = Console.ReadLine();
-
-    if (NombreusuarioI == NombreUsuario && ContraseñaI == ContraseñaV)
+    if ( numero % 2 == 0)
     {
-        Console.WriteLine("Acceso autorizado");
+        Console.WriteLine("Su numero es par");
     }
     else
     {
-        Console.WriteLine("usuario o contraseña invalidos, reintente denuevo porfavor");
+        Console.WriteLine("su numero es impar");
     }
+}
+catch (FormatException)
+{
+    Console.WriteLine("Ingresar solamente numeros porfavor");
 }
 catch (Exception ex)
 {
