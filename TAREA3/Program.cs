@@ -2,22 +2,22 @@
 
 try
 {
-    Console.WriteLine("Ingrese el precio del producto que desea llevar");
-    double Producto = Convert.ToDouble(Console.ReadLine());
-    if (Producto > 100)
+    string NombreUsuario = "Usuario";
+    string ContraseñaV = "contraseña";
+
+    Console.WriteLine("Ingrese su nombre de usuario: ");
+    string NombreusuarioI = Console.ReadLine();
+    Console.WriteLine("Ingrese su contraseña: ");
+    string ContraseñaI = Console.ReadLine();
+
+    if (NombreusuarioI == NombreUsuario && ContraseñaI == ContraseñaV)
     {
-        Double Descuento = Producto  * 0.10;
-        Double PrecioFinal = Producto - Descuento;
-        Console.WriteLine("Su producto aplica al 10% de descuento:" + "El precio final es " + PrecioFinal);
+        Console.WriteLine("Acceso autorizado");
     }
     else
     {
-        Console.WriteLine("Su producto no aplica al 10% de descuento debido a que su valor es: " + Producto);
+        Console.WriteLine("usuario o contraseña invalidos, reintente denuevo porfavor");
     }
-}
-catch (FormatException)
-{
-    Console.WriteLine("Coloca solo precios de productos porfavor");
 }
 catch (Exception ex)
 {
