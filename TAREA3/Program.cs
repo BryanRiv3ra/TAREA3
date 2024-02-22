@@ -1,20 +1,23 @@
-﻿try
-{
-    Console.WriteLine("Ingrese su edad actual:");
-    int Edad = Convert.ToInt32(Console.ReadLine());
+﻿using System.Runtime.ConstrainedExecution;
 
-    if (Edad > 18)
+try
+{
+    Console.WriteLine("Ingrese el precio del producto que desea llevar");
+    double Producto = Convert.ToDouble(Console.ReadLine());
+    if (Producto > 100)
     {
-        Console.WriteLine("Feicidades, puedes pasar al club");
+        Double Descuento = Producto  * 0.10;
+        Double PrecioFinal = Producto - Descuento;
+        Console.WriteLine("Su producto aplica al 10% de descuento:" + "El precio final es " + PrecioFinal);
     }
     else
     {
-        Console.WriteLine("No tienes la edad suficiente para entrar");
+        Console.WriteLine("Su producto no aplica al 10% de descuento debido a que su valor es: " + Producto);
     }
 }
 catch (FormatException)
 {
-    Console.WriteLine("Coloca solo numeros porfavor");
+    Console.WriteLine("Coloca solo precios de productos porfavor");
 }
 catch (Exception ex)
 {
