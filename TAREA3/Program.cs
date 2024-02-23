@@ -1,42 +1,25 @@
 ﻿try
-{ 
-    Console.WriteLine("Ingrese un número del 1 al 7:");
-    int numeroDia = Convert.ToInt32(Console.ReadLine());
+{
+    Console.WriteLine("Ingrese el servicio que quiere recibir (lavado de auto, cambio de aceite, revisión mecánica):");
+    string Servicio = Console.ReadLine().ToLower();
+    double Pago = 0;
 
-    string dia = "";
-    switch (numeroDia)
+    switch (Servicio)
     {
-        case 1:
-            dia = "Lunes";
+        case "lavado de auto":
+            Pago = 50;
             break;
-        case 2:
-            dia = "Martes";
+        case "cambio de aceite":
+            Pago = 25;
             break;
-        case 3:
-            dia = "Miércoles";
-            break;
-        case 4:
-            dia = "Jueves";
-            break;
-        case 5:
-            dia = "Viernes";
-            break;
-        case 6:
-            dia = "Sábado";
-            break;
-        case 7:
-            dia = "Domingo";
+        case "revisión mecánica":
+            Pago = 150;
             break;
         default:
-            Console.WriteLine("Número de día no válido.");
+            Console.WriteLine("Tipo de servicio no válido.");
             return;
     }
-
-    Console.WriteLine($"El día de la semana correspondiente a {numeroDia} es: {dia}");
-}
-catch (FormatException)
-{
-    Console.WriteLine("Ingrese solo numeros validos.");
+    Console.WriteLine($"El importe a pagar por {Servicio} es: {Pago}");
 }
 catch (Exception ex)
 {
