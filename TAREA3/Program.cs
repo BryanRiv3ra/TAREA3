@@ -1,27 +1,32 @@
 ﻿try
 {
-    Console.WriteLine("Ingrese el servicio que quiere recibir (lavado de auto, cambio de aceite, revisión mecánica):");
-    string Servicio = Console.ReadLine().ToLower();
-    double Pago = 0;
-
-    switch (Servicio)
+    Console.WriteLine("Ingrese la calificación de su examen porfavor:");
+    int calificacion = Convert.ToInt32(Console.ReadLine());
+    switch (calificacion)
     {
-        case "lavado de auto":
-            Pago = 50;
+        case >= 90 and <= 100:
+            Console.WriteLine("Felicidades eres sobresaliente");
             break;
-        case "cambio de aceite":
-            Pago = 25;
+        case >= 80 and <= 89:
+            Console.WriteLine("Felicidades eres mejor al primedio");
             break;
-        case "revisión mecánica":
-            Pago = 150;
+        case >= 70 and <= 79:
+            Console.WriteLine("Felicidades aprobaste");
+            break;
+        case >= 60 and <= 69:
+            Console.WriteLine("Lamentablemente no aprobaste");
             break;
         default:
-            Console.WriteLine("Tipo de servicio no válido.");
-            return;
+            Console.WriteLine("Calificación no válida.");
+            break;
     }
-    Console.WriteLine($"El importe a pagar por {Servicio} es: {Pago}");
+}
+catch (FormatException)
+{
+    Console.WriteLine("Error: Por favor, ingrese una calificación válida.");
 }
 catch (Exception ex)
 {
     Console.WriteLine("Error inesperado: " + ex.Message);
 }
+    
