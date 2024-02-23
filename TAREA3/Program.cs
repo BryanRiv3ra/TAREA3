@@ -1,23 +1,40 @@
 ﻿try
 {
-    Console.WriteLine("Ingrese el monto del prestamo que desea realizar");
-    double Prestamo = Convert.ToDouble(Console.ReadLine());
-    Console.WriteLine("Ingrese su edad porfavor");
-    int edad = Convert.ToInt32(Console.ReadLine());
-    if (Prestamo < 5000 || edad > 60)
+    Console.WriteLine("ingrese la figura geometrica que desea calcular (cuadrado, triangulo o circulo)");
+    string Figura = Console.ReadLine();
+    double area = 0;
+
+    switch (Figura)
     {
-        Console.WriteLine("usted aplica al prestamo, Felicidades");
+        case "triangulo":
+            Console.WriteLine("Ingrese la base: ");
+            double basetriangulo = Convert.ToDouble(Console.ReadLine());
+            Console.WriteLine("Ingrese la altura:");
+            double alturatriangulo = Convert.ToDouble(Console.ReadLine());
+            area = 0.5 * basetriangulo * alturatriangulo;
+            break;
+        case "cuadrado":
+            Console.WriteLine("Ingrese el lado:");
+            double lado = Convert.ToDouble(Console.ReadLine());
+            area = lado * lado;
+            break;
+        case "circulo":
+            Console.WriteLine("Ingrese el radio:");
+            double radio = Convert.ToDouble(Console.ReadLine());
+            area = Math.PI * radio * radio;
+            break;
+        default:
+            Console.WriteLine("Tipo de figura geométrica no válido.");
+            return;
     }
-    else
-    {
-        Console.WriteLine("Lamentablemente no cumple con los requisitos para el prestamo");
-    }
+
+    Console.WriteLine("El área de: " + Figura + "es: " + area);
 }
 catch (FormatException)
 {
-    Console.WriteLine("Ingresar solo lo solicitado porfavor");
+    Console.WriteLine("Solamente valores numeros porfavor");
 }
 catch (Exception ex)
 {
-    Console.WriteLine("Se ha producido un error: " + ex.Message);
+    Console.WriteLine("Error inesperado: " + ex.Message);
 }
