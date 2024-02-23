@@ -1,38 +1,32 @@
 ﻿try
 {
-    Console.WriteLine("ingrese la figura geometrica que desea calcular (cuadrado, triangulo o circulo)");
-    string Figura = Console.ReadLine();
-    double area = 0;
+    Console.WriteLine("Ingrese un número del 1 al 5 en letra (uno, dos, tres, cuatro, cinco):");
+    string Letra = Console.ReadLine().ToLower();
 
-    switch (Figura)
+    int Digito = 0;
+    switch (Letra)
     {
-        case "triangulo":
-            Console.WriteLine("Ingrese la base: ");
-            double basetriangulo = Convert.ToDouble(Console.ReadLine());
-            Console.WriteLine("Ingrese la altura:");
-            double alturatriangulo = Convert.ToDouble(Console.ReadLine());
-            area = 0.5 * basetriangulo * alturatriangulo;
+        case "uno":
+            Digito = 1;
             break;
-        case "cuadrado":
-            Console.WriteLine("Ingrese el lado:");
-            double lado = Convert.ToDouble(Console.ReadLine());
-            area = lado * lado;
+        case "dos":
+            Digito = 2;
             break;
-        case "circulo":
-            Console.WriteLine("Ingrese el radio:");
-            double radio = Convert.ToDouble(Console.ReadLine());
-            area = Math.PI * radio * radio;
+        case "tres":
+            Digito = 3;
+            break;
+        case "cuatro":
+            Digito = 4;
+            break;
+        case "cinco":
+            Digito = 5;
             break;
         default:
-            Console.WriteLine("Tipo de figura geométrica no válido.");
+            Console.WriteLine("Número en letra no válido.");
             return;
     }
 
-    Console.WriteLine("El área de: " + Figura + "es: " + area);
-}
-catch (FormatException)
-{
-    Console.WriteLine("Solamente valores numeros porfavor");
+    Console.WriteLine($"El número en dígito es: {Digito}");
 }
 catch (Exception ex)
 {
